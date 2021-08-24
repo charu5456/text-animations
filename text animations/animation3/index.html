@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Flying Text Animation Effects</title>
+</head>
+<body>
+    <section>
+        <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi exercitationem aspernatur recusandae deleniti inventore ipsam molestias necessitatibus, doloribus reiciendis corrupti, hic quisquam dolorum dolore veritatis magnam sit esse? Minima dolor rerum sed delectus et praesentium odio porro, repellat ipsum repudiandae maiores consequatur labore iure. Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis quibusdam nemo voluptatum animi expedita est quos atque dolorem sed accusantium?</p>
+    </section>
+    <script src="anime.min.js"></script>
+    <script>
+        const text = document.querySelector('.text');
+        text.innerHTML = text.textContent.replace(/\S/g, "<span>$&</span>");
+        const animation = anime.timeline({
+            targets : '.text span',
+            easing : 'easeInOutExpo',
+            loop : true,
+        });
+        animation
+        .add({
+            rotate: function(){
+                return anime.random(-360,360)
+            },
+            translateX: function(){
+                return anime.random(-500,500)
+            },
+            translateY: function(){
+                return anime.random(-500,500)
+            },
+            duration: 5000,
+            delay: anime.stagger(20),
+        })
+
+        .add({
+            rotate: 0,
+           
+            translateX: 0,
+            
+            translateY: 0,
+           
+            duration: 5000,
+            delay: anime.stagger(20),
+        })
+
+
+
+    </script>
+</body>
+</html>

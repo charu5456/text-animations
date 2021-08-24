@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Animation Text filling with color</title>
+</head>
+
+<style type="text/css">
+     body, h1{
+         margin: 0;
+         padding: 0;
+         font-family: arial;
+         background-color: rgb(0, 0, 0);
+     }
+ 
+     .text-container h1{
+         font-size: 140px;
+         color: rgba(225, 225, 255, .1);
+         background-size: cover;
+         background-image: url(2.jpg);
+         background-repeat: repeat-x;
+         -webkit-background-clip: text;
+         animation: animate 15s linear infinite;
+     }
+
+     @keyframes animate {
+         0%{
+             background-position: left 0px top 10px;
+         }
+         40%{
+             background-position: left 800px top 10px;
+         }
+     }
+
+     .text-container{
+         margin-top: 14%;
+         text-align: center;
+     }
+
+</style>
+<body>
+    <div class="text-container">
+        <h1>MAnUsHrI <br> ShARmA </h1>
+    </div>
+</body>
+</html>
